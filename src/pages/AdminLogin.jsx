@@ -15,6 +15,11 @@ export default function AdminLogin({ setIsAuthenticated }) {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setIsAuthenticated(true);
+      // After successful login
+      localStorage.setItem(
+        "admin",
+        JSON.stringify({ email: "jegnitaward@gmail.com" })
+      );
     } catch (error) {
       setError(error.message);
       toast.error(error.message);
@@ -51,7 +56,7 @@ export default function AdminLogin({ setIsAuthenticated }) {
 
             <button
               type="submit"
-              className="py-3 bg-[#2563EB] text-white w-full rounded-md font-bold"
+              className="py-3 bg-[#FFB001] text-blue-950 w-full rounded-md font-bold"
             >
               Submit
             </button>

@@ -1,20 +1,36 @@
 import { Link } from "react-router-dom";
-import { auth } from "../firebase";
+import Logo from "../assets/Logo.jpg";
+import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
-export default function Header({ setIsAuthenticated }) {
+export default function Header() {
+  const [isAdmin, setIsAdmin] = useState(false);
+
   const handleLogout = async () => {
     await signOut(auth); // Logout the admin
+    localStorage.removeItem("admin");
+    window.location.reload(); // Optional: To refresh the UI
   };
+
+  useEffect(() => {
+    // Check if admin is logged in by checking local storage
+    const adminData = localStorage.getItem("admin");
+    setIsAdmin(!!adminData); // If adminData exists, set isAdmin to true
+  }, []);
 
   return (
     <header className="mb-2 px-4 shadow bg-gray-900 sticky top-0 z-50">
       <div className="relative mx-auto flex max-w-screen-lg flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
-        <Link to={"/"} className="flex items-center text-xl font-black">
-          <span className="mr-2 text-3xl text-blue-600">
-            <p>Voting</p>
-          </span>
-          <span>System</span>
+        <Link to={"/"} className="flex items-center text-xl font-black gap-3">
+          <img src={Logo} alt="" width={50} className="rounded-full" />
+          <p className="flex">
+            {" "}
+            <span className="mr-2 text-xl text-[#FFB001]">
+              <p>Jegnit</p>
+            </span>
+            <span>Vote</span>
+          </p>
         </Link>
         <input className="peer hidden" type="checkbox" id="navbar-open" />
         <label
@@ -41,34 +57,39 @@ export default function Header({ setIsAuthenticated }) {
         >
           <ul className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8">
             <li className="">
-              <Link
-                to={"/"}
-                className="text-white hover:text-blue-600"
-                href="#"
-              >
+              <Link to={"/"} className="text-white hover:text-[#FFB001]">
                 Home
               </Link>
             </li>
             <li className="">
-              <Link
-                to={"/"}
-                className="text-white hover:text-blue-600"
-                href="#"
-              >
+              <Link to={"/"} className="text-white hover:text-[#FFB001]">
                 Categories
               </Link>
             </li>
-
-            <li className="mt-2 sm:mt-0">
-              {setIsAuthenticated && (
-                <Link
-                  className="rounded-xl border-2 border-blue-600 px-6 py-2 font-medium text-blue-600 hover:bg-blue-600 hover:text-white"
-                  onClick={handleLogout}
-                >
-                  Admin
-                </Link>
-              )}
-            </li>
+            {isAdmin ? (
+              <p className="flex items-center gap-3">
+                <li>
+                  <Link
+                    to={"/dashboard"}
+                    className="text-white hover:text-[#FFB001]"
+                  >
+                    Dashboard
+                  </Link>
+                </li>{" "}
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="text-red-400 hover:text-[#FFB001]"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </p>
+            ) : (
+              <Link to="/admin" className="text-red-400 hover:text-[#FFB001]">
+                Admin Login
+              </Link>
+            )}
           </ul>
         </nav>
       </div>
