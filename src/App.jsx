@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import AdminLogin from "./pages/AdminLogin";
 import { useEffect, useState } from "react";
@@ -38,14 +38,8 @@ export default function App() {
           }
         />
         <Route path="/dashboard" element={isAdmin ? <Dashboard /> : null} />
-        <Route
-          path="/add"
-          element={isAdmin ? <AddNominee /> : <Navigate to="/admin" replace />}
-        />
-        <Route
-          path="/list"
-          element={isAdmin ? <NomineeList /> : <Navigate to="/admin" replace />}
-        />
+        <Route path="/add" element={<AddNominee />} />
+        <Route path="/list" element={<NomineeList />} />
       </Routes>
     </>
   );
