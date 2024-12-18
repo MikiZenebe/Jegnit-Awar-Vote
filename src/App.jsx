@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import AdminLogin from "./pages/AdminLogin";
 import { useEffect, useState } from "react";
 import { Dashboard } from "./pages/Dashboard";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase";
 import AddNominee from "./pages/AddNominee";
 import NomineeList from "./components/NomineeList";
 
