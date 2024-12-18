@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/Logo.jpg";
+import Logo from "../assets/logo.jpg";
 import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
