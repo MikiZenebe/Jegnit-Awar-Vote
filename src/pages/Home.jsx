@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Banner from "../assets/baner.jpg";
 
 export default function Home() {
@@ -18,6 +19,12 @@ export default function Home() {
         <p className="text-lg md:text-xl mb-12">
           With the help of this platform, you can vote your hero.
         </p>
+        <button
+          type="button"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white text-base tracking-wide px-6 py-3 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-xl"
+        >
+          <Link to="/vote">Let's Vote</Link>
+        </button>
       </div>
     </div>
   );
