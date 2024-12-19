@@ -21,6 +21,7 @@ export default function AdminLogin({ setIsAuthenticated }) {
         "admin",
         JSON.stringify({ email: "jegnitaward@gmail.com" })
       );
+      window.location.reload();
     } catch (error) {
       setError(error.message);
       toast.error(error.message);

@@ -6,6 +6,7 @@ import { Dashboard } from "./pages/Dashboard";
 import AddNominee from "./pages/AddNominee";
 import NomineeList from "./components/NomineeList";
 import VotePage from "./pages/VotePage";
+import Analytics from "./pages/Analytics";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/add" element={<AddNominee />} />
         <Route path="/list" element={<NomineeList />} />
         <Route path="/vote" element={<VotePage />} />
+        <Route path="/stat" element={<Analytics />} />
       </Routes>
     </>
   );

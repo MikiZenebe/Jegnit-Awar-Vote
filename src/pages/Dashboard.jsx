@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Analytics from "./Analytics";
 
 export const Dashboard = () => {
   return (
@@ -15,10 +16,16 @@ export const Dashboard = () => {
             <button className="bg-[#FFB001] text-blue-950 p-4 rounded-xl">
               <Link to="/list">Nominne List</Link>
             </button>
+            {/* <button className="bg-[#FFB001] text-blue-950 p-4 rounded-xl">
+              <Link to="/stat">General Analytics</Link>
+            </button> */}
           </div>
         </div>
       </div>
       {/* We'll add more features like nominee management here later */}
+      <div className="max-w-2xl mx-auto ">
+        <Analytics />
+      </div>
     </div>
   );
 };
