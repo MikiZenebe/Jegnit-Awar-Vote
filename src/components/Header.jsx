@@ -62,8 +62,8 @@ export default function Header() {
               </Link>
             </li>
             <li className="">
-              <Link to={"/"} className="text-white hover:text-[#FFB001]">
-                Categories
+              <Link to={"/vote"} className="text-white hover:text-[#FFB001]">
+                Vote
               </Link>
             </li>
             {isAdmin ? (

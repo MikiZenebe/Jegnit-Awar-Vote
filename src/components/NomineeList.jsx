@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 function NomineeList() {
   const [nominees, setNominees] = useState([]);
-  const [selectedNomineeId, setSelectedNomineeId] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchNominees = async () => {
@@ -27,6 +27,7 @@ function NomineeList() {
     );
 
     if (confirmDelete) {
+      setLoading(true);
       try {
         const docRef = doc(db, "nominees", nomineeId);
         await deleteDoc(docRef);
@@ -38,6 +39,8 @@ function NomineeList() {
       } catch (error) {
         console.error("Error deleting nominee:", error);
         toast.error("Error deleting nominee");
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -116,7 +119,7 @@ function NomineeList() {
                       onClick={() => handleDeleteNominee(nominee.id)}
                       className="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-semibold cursor-pointer"
                     >
-                      Delete
+                      {loading ? "Proccessing..." : "Delete"}
                     </td>
                   </tr>
                 </tbody>

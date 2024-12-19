@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Dashboard } from "./pages/Dashboard";
 import AddNominee from "./pages/AddNominee";
 import NomineeList from "./components/NomineeList";
+import VotePage from "./pages/VotePage";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/dashboard" element={isAdmin ? <Dashboard /> : null} />
         <Route path="/add" element={<AddNominee />} />
         <Route path="/list" element={<NomineeList />} />
+        <Route path="/vote" element={<VotePage />} />
       </Routes>
     </>
   );

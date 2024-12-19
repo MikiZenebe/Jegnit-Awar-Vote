@@ -56,6 +56,7 @@ function AddNominee() {
         description,
         category,
         imageUrl,
+        votes: 0,
       });
       toast.success("Nominee added successfully!");
       setName("");
