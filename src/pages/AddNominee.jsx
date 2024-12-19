@@ -97,7 +97,6 @@ function AddNominee() {
                 placeholder="Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                required
               />
               <input
                 type="text"

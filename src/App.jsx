@@ -7,6 +7,7 @@ import AddNominee from "./pages/AddNominee";
 import NomineeList from "./components/NomineeList";
 import VotePage from "./pages/VotePage";
 import Analytics from "./pages/Analytics";
+import Home from "./pages/Home";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -44,6 +45,7 @@ export default function App() {
         <Route path="/list" element={<NomineeList />} />
         <Route path="/vote" element={<VotePage />} />
         <Route path="/stat" element={<Analytics />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </>
   );

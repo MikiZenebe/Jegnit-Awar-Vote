@@ -83,7 +83,7 @@ export default function VotePage() {
             key={category}
             className={`px-4 py-2 rounded ${
               selectedCategory === category
-                ? "bg-[#FFB001] text-white"
+                ? "bg-[#FFB001] text-gray-800 font-semibold"
                 : "bg-gray-200 text-gray-700"
             }`}
             onClick={() => setSelectedCategory(category)}

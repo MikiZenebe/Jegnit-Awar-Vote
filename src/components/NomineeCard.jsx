@@ -7,11 +7,27 @@ import { useEffect, useState } from "react";
 function NomineeCard({ nominee, category, voterId }) {
   const [hasVoted, setHasVoted] = useState(false);
 
+  // Check voting status on load
   useEffect(() => {
     const checkVote = async () => {
-      const voteRef = doc(db, "votes", `${voterId}_${category}`);
-      const existingVote = await getDoc(voteRef);
-      setHasVoted(existingVote.exists());
+      // Check local storage first
+      const localVoteStatus = localStorage.getItem(`${voterId}_${category}`);
+      if (localVoteStatus) {
+        setHasVoted(true);
+        return;
+      }
+
+      // If not found in local storage, check Firestore
+      try {
+        const voteRef = doc(db, "votes", `${voterId}_${category}`);
+        const existingVote = await getDoc(voteRef);
+        if (existingVote.exists()) {
+          setHasVoted(true);
+          localStorage.setItem(`${voterId}_${category}`, "true"); // Save in local storage for faster subsequent checks
+        }
+      } catch (error) {
+        console.error("Error checking vote:", error);
+      }
     };
 
     checkVote();
@@ -36,7 +52,7 @@ function NomineeCard({ nominee, category, voterId }) {
       await updateDoc(nomineeRef, {
         votes: nominee.votes + 1,
       });
-
+      window.location.reload();
       setHasVoted(true);
       toast.success(`Your vote for ${nominee.name} has been recorded!`);
     } catch (error) {
@@ -46,24 +62,41 @@ function NomineeCard({ nominee, category, voterId }) {
   }
 
   return (
-    <div className="border rounded-lg p-4 shadow">
-      <img
-        src={nominee.imageUrl}
-        alt={nominee.name}
-        className="w-full h-40 object-cover rounded"
-      />
-      <h3 className="text-lg font-bold mt-2">{nominee.name}</h3>
-      <p className="text-gray-600">{nominee.description}</p>
-      <div className="flex w-full justify-end">
-        <p className="text-gray-500 mt-2">Votes: {nominee.votes || 0}</p>
+    <div className="">
+      <div className="w-full flex items-center justify-center  ">
+        <article className="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden ">
+          <div>
+            <img
+              className="object-cover h-64 w-full"
+              src={nominee.imageUrl}
+              alt={nominee.name}
+            />
+          </div>
+
+          <div className="flex flex-col gap-3 my-4 px-4">
+            <div className="text-lg font-semibold text-gray-800  flex justify-between items-center">
+              <div> {nominee.name}</div>
+              <div className="font-normal text-gray-600  text-sm">
+                #{nominee.category}
+              </div>
+            </div>
+
+            <div className="font-semibold text-gray-800 ">
+              Votes: {nominee.votes}
+            </div>
+          </div>
+
+          <div className=" p-4 border-t border-gray-200 ">
+            <button
+              className="bg-[#FFB001] text-gray-800 font-semibold rounded px-4 py-2  w-full hover:bg-yellow-600 disabled:cursor-not-allowed disabled:bg-[#968f81]"
+              onClick={handleVote}
+              disabled={hasVoted}
+            >
+              {hasVoted ? "You Already Voted" : "Vote"}
+            </button>
+          </div>
+        </article>
       </div>
-      <button
-        className="bg-[#FFB001] text-white rounded px-4 py-2 mt-4 w-full hover:bg-yellow-600 disabled:cursor-not-allowed disabled:bg-[#968f81]"
-        onClick={handleVote}
-        disabled={hasVoted}
-      >
-        {hasVoted ? "You Already Voted" : "Vote"}
-      </button>
     </div>
   );
 }
