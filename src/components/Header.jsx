@@ -29,7 +29,7 @@ export default function Header() {
             <span className="mr-2 text-xl text-[#FFB001]">
               <p>Jegnit</p>
             </span>
-            <span>Vote</span>
+            <span>Award</span>
           </p>
         </Link>
         <input className="peer hidden" type="checkbox" id="navbar-open" />
