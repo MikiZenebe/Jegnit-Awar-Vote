@@ -55,8 +55,8 @@ function NomineeList() {
         {nominees.length === 0 ? (
           <div className="text-5xl">No nominess avaliable</div>
         ) : (
-          <div>
-            <table className="min-w-full divide-y divide-gray-200 overflow-x-auto ">
+          <div className="overflow-auto">
+            <table className="min-w-full divide-y divide-gray-200 max-h-[90vh] overflow-auto ">
               <thead className="bg-[#111827]">
                 <tr className="">
                   <th

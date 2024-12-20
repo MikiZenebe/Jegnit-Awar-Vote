@@ -4,6 +4,7 @@ import { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
+import { Navigate } from "react-router-dom";
 
 export default function AdminLogin({ setIsAuthenticated }) {
   const [email, setEmail] = useState("");
@@ -21,7 +22,8 @@ export default function AdminLogin({ setIsAuthenticated }) {
         "admin",
         JSON.stringify({ email: "jegnitaward@gmail.com" })
       );
-      window.location.reload();
+      window.location.replace("/dashboard");
+      <Navigate to="/dashboard" replace />;
     } catch (error) {
       setError(error.message);
       toast.error(error.message);
