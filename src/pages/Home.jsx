@@ -36,7 +36,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl">
+      <div className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl my-[10rem]">
         <div className="w-full h-64 lg:w-1/2 lg:h-auto">
           <img
             className="h-full w-full object-cover"

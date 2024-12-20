@@ -8,6 +8,7 @@ import NomineeList from "./components/NomineeList";
 import VotePage from "./pages/VotePage";
 import Analytics from "./pages/Analytics";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/stat" element={<Analytics />} />
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </>
   );
 }
