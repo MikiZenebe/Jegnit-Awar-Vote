@@ -47,9 +47,11 @@ export default function Footer() {
           .
         </span> */}
           <div className="flex flex-col gap-1">
-            <p>Contact Us</p>
-            <p className="text-gray-400">example@gmail.com</p>
-            <p className="text-gray-400"> 090000000</p>
+            <p className="text-[#003138]">ለበለጠ መረጃ</p>
+            <p className="flex flex-col text-[#003138]">
+              <span> 09 12 34 56 78</span> <span>09 87 65 43 21</span>
+            </p>
+            <p className="text-[#003138]">example@gmail.com</p>
           </div>
         </div>
 
