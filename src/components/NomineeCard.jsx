@@ -62,33 +62,35 @@ function NomineeCard({ nominee, category, voterId }) {
   }
 
   return (
-    <div className="">
+    <div className="mb-[10rem]">
       <div className="w-full flex items-center justify-center  ">
-        <article className="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden ">
+        <article className="max-w-sm w-full bg-white rounded-[50px] shadow-lg overflow-hidden p-3">
           <div>
             <img
-              className="object-cover h-64 w-full"
+              className="object-cover h-64 w-full rounded-[50px]"
               src={nominee.imageUrl}
               alt={nominee.name}
             />
           </div>
 
           <div className="flex flex-col gap-3 my-4 px-4">
-            <div className="text-lg font-semibold text-gray-800  flex justify-between items-center">
-              <div> {nominee.name}</div>
-              <div className="font-normal text-gray-600  text-sm">
+            <div className="text-lg font-semibold text-gray-800  flex justify-between  flex-col gap-1">
+              <p className="font-normal text-gray-600  text-sm">
                 #{nominee.category}
-              </div>
+              </p>
+              <p className="text-xl"> {nominee.name}</p>
+
+              <p className="font-normal text-xs">{nominee.description}</p>
             </div>
 
             <div className="font-semibold text-gray-800 ">
-              Votes: {nominee.votes}
+              <span className="font-normal">የምርጫ ድምጽ</span>: {nominee.votes}
             </div>
           </div>
 
           <div className=" p-4 border-t border-gray-200 ">
             <button
-              className="bg-[#FFB001] text-gray-800 font-semibold rounded px-4 py-2  w-full hover:bg-yellow-600 disabled:cursor-not-allowed disabled:bg-[#968f81]"
+              className="bg-[#FFB001] text-gray-800 font-semibold rounded px-4 py-2  w-full hover:bg-yellow-600 disabled:cursor-not-allowed disabled:bg-[#968f81] rounded-[50px]"
               onClick={handleVote}
               disabled={hasVoted}
             >

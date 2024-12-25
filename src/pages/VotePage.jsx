@@ -72,10 +72,6 @@ export default function VotePage() {
 
   return (
     <div className="max-w-screen-lg mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6 text-center">
-        Vote for Your Favorites!
-      </h1>
-
       {/* Category List */}
       <div className="flex gap-4 justify-center mb-6">
         {categories.map((category) => (
@@ -83,8 +79,8 @@ export default function VotePage() {
             key={category}
             className={`px-4 py-2 rounded ${
               selectedCategory === category
-                ? "bg-[#FFB001] text-gray-800 font-semibold"
-                : "bg-gray-200 text-gray-700"
+                ? "underline text-[#FFB001] font-semibold"
+                : " text-white"
             }`}
             onClick={() => setSelectedCategory(category)}
           >

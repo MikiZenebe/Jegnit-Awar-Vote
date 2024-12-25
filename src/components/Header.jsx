@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
 import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
@@ -20,7 +20,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="mb-2 px-4 shadow bg-gray-900 sticky top-0 z-50">
+    <header className="mb-2 px-4 shadow bg-[#003138] sticky top-0 z-50">
       <div className="relative mx-auto flex max-w-screen-lg flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
         <Link to={"/"} className="flex items-center text-xl font-black gap-3">
           <img src={Logo} alt="" width={50} className="rounded-full" />
@@ -57,16 +57,31 @@ export default function Header() {
         >
           <ul className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8">
             <li className="">
-              <Link to={"/"} className="text-white hover:text-[#FFB001]">
-                Home
-              </Link>
+              <NavLink
+                to={"/"}
+                className={
+                  ({ isActive }) =>
+                    isActive
+                      ? "text-[#FFB001] font-bold" // Active link style
+                      : "text-white hover:text-[#FFB001]" // Default style
+                }
+              >
+                መግቢያ
+              </NavLink>
             </li>
             <li className="">
-              <Link to={"/vote"} className="text-white hover:text-[#FFB001]">
-                Vote
-              </Link>
+              <NavLink
+                to={"/vote"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#FFB001] font-bold"
+                    : "text-white hover:text-[#FFB001]"
+                }
+              >
+                ምርጫ
+              </NavLink>
             </li>
-            {isAdmin ? (
+            {/* {isAdmin ? (
               <p className="flex items-center gap-3">
                 <li>
                   <Link
@@ -89,7 +104,7 @@ export default function Header() {
               <Link to="/admin" className="text-red-400 hover:text-[#FFB001]">
                 Admin Login
               </Link>
-            )}
+            )} */}
           </ul>
         </nav>
       </div>

@@ -1,46 +1,47 @@
 import { Link } from "react-router-dom";
-import Banner from "../assets/baner.jpg";
-import HeroImg from "../assets/hero.jpg";
 
 export default function Home() {
   return (
     <div>
       {" "}
-      <div className="relative bg-gradient-to-r from-yellow-900 to-yellow-800 py-16  font-[sans-serif] ">
+      <div className="relative pt-16  font-[sans-serif] ">
         <div className="absolute inset-0">
           <img
-            src={Banner}
+            src="https://framerusercontent.com/images/cOftoM665vb1meUfDnmoINSi2Q.jpg"
             alt="Background Image"
-            className="w-full h-full object-cover opacity-50"
+            className="w-full  object-cover opacity-50"
           />
         </div>
 
-        <div className="relative max-w-screen-xl mx-auto px-8 z-10 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Welcome to Our Award-Voting
-          </h1>
-          <p className="text-lg md:text-xl mb-12">
-            The Women&apos;s Encouragement Award is all about celebrating women
-            who inspire us. These are women who break barriers, make a
-            difference in their communities, and show us what’s possible when we
-            dream big and work hard. This award shines a light on their
-            achievements and stories, reminding us all of the strength and
-            determination it takes to create real change. It’s our way of saying
-            “thank you” to the women who lead with heart and courage.
-          </p>
-          <button
-            type="button"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white text-base tracking-wide px-6 py-3 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-xl"
-          >
-            <Link to="/vote">Let&apos;s Vote</Link>
-          </button>
+        <div className="relative max-w-screen-xl mx-auto z-10 text-center text-white flex flex-col justify-center items-center">
+          <div className="my-[10rem]">
+            <h1 className="text-4xl flex flex-col gap-4 md:text-5xl font-extrabold  mb-6 ">
+              ወደ ሽልማት ምርጫ ድህረገጻችን{" "}
+              <span className="text-[#FFB001]">እንኳን በሰላም መጡ!</span>
+            </h1>
+            <p className="text-lg md:text-xl mb-12 max-w-5xl mx-auto">
+              ይህ ጀግኒት የሴቶች ማበረታቻ ሽልማት እኛን የሚያበረቱ ሴቶችን ለማክበር የተሰናዳ ልዩ መሰናዶ ነው።
+              እነኚህ ሴቶች እንቅፋቶችን በጽናት ያለፉ፣ በማህበረሰባችን ዘንድ ዘላቁ ለውጥን ያደረጉ እንዲሁም ትልቅ
+              ህልምን ሰንቀው በመጓዝ በህይወታቸው ውጤት በማምጣታቸው አርአያ መሆን እንደሚቻል ያሳዩን ድንቅ ምሳሌ
+              ናቸው። ይህ የሽልማት መርሃግብር፤ በውጤታቸው እና ታሪካቸው ላይ ተመስርተን ለሁላችንም ጥንካሬ እና
+              ብርታትን ከቁርጠኝነት ጋር ያጎናጽፉናል። ለዚህም ተግባራቸው እና ምግባራቸው እናመሰግናለን የምንልበት
+              መንገዳችንን እነሆ ጀግኒት ብለን ሰንቀናል። እነኚህን ድንቅ እና ጀግና ሴቶች በመምረጥ የበኩሎን ያላሰለሰ
+              አስተዋጽኦ ስላደረጉ እናመሰግናለን።
+            </p>
+            <button
+              type="button"
+              className="bg-[#FFB001] font-medium hover:bg-[#9b7628] text-black text-base tracking-wide px-8 py-2 rounded-full transition duration-300 ease-in-out shadow-lg hover:shadow-xl"
+            >
+              <Link to="/vote">ይምረጡ</Link>
+            </button>
+          </div>
         </div>
       </div>
-      <div className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl my-[10rem]">
+      {/* <div className="relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl my-[10rem]">
         <div className="w-full h-64 lg:w-1/2 lg:h-auto">
           <img
             className="h-full w-full object-cover"
-            src={HeroImg}
+            src={"HeroImg"}
             alt="Winding mountain road"
           />
         </div>
@@ -61,7 +62,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

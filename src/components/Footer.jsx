@@ -3,8 +3,8 @@ import Logo from "../assets/logo.jpg";
 
 export default function Footer() {
   return (
-    <footer className="w-full bottom-0 mt-[30rem]">
-      <div className="text-center bg-[#111827] py-5 flex  flex-col w-full mx-auto gap-[2rem]  px-10">
+    <footer className="w-full bottom-0 ">
+      <div className="text-center bg-[#FFB000] py-5 flex  flex-col w-full mx-auto gap-[2rem]  px-10">
         <div className="flex  justify-between">
           {" "}
           <div className="flex flex-col gap-3">
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs">
+          <p className="text-xs text-[#003138]">
             Copyright © 2024 Developed by ELFE Digital . ALL RIGHTS RESERVED
           </p>
         </div>
