@@ -81,7 +81,7 @@ export default function Header() {
                 ምርጫ
               </NavLink>
             </li>
-            {/* {isAdmin ? (
+            {isAdmin ? (
               <p className="flex items-center gap-3">
                 <li>
                   <Link
@@ -100,11 +100,7 @@ export default function Header() {
                   </button>
                 </li>
               </p>
-            ) : (
-              <Link to="/admin" className="text-red-400 hover:text-[#FFB001]">
-                Admin Login
-              </Link>
-            )} */}
+            ) : null}
           </ul>
         </nav>
       </div>
