@@ -77,7 +77,7 @@ export default function VotePage() {
         {categories.map((category) => (
           <button
             key={category}
-            className={`px-4 py-2 rounded ${
+            className={`px-4 py-2 rounded text-xl ${
               selectedCategory === category
                 ? "underline text-[#FFB001] font-semibold"
                 : " text-white"

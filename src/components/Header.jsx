@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../assets/logo.jpg";
+import Logo from "../assets/jegnit Logo-03.svg";
 import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
@@ -20,17 +20,17 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="mb-2 px-4 shadow bg-[#003138] sticky top-0 z-50">
+    <header className="mb-2 px-4  bg-[#003138] sticky top-0 z-50">
       <div className="relative mx-auto flex max-w-screen-lg flex-col py-4 sm:flex-row sm:items-center sm:justify-between">
         <Link to={"/"} className="flex items-center text-xl font-black gap-3">
-          <img src={Logo} alt="" width={50} className="rounded-full" />
-          <p className="flex">
+          <img src={Logo} alt="" width={120} className="rounded-full" />
+          {/* <p className="flex">
             {" "}
             <span className="mr-2 text-xl text-[#FFB001]">
               <p>Jegnit</p>
             </span>
             <span>Award</span>
-          </p>
+          </p> */}
         </Link>
         <input className="peer hidden" type="checkbox" id="navbar-open" />
         <label
@@ -55,7 +55,7 @@ export default function Header() {
           aria-label="Header Navigation"
           className="peer-checked:block hidden pl-2 py-6 sm:block sm:py-0"
         >
-          <ul className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8">
+          <ul className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 text-xl">
             <li className="">
               <NavLink
                 to={"/"}

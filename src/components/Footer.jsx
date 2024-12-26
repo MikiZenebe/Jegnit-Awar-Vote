@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
-import Logo from "../assets/logo.jpg";
+import Logo from "../assets/jegnit Logo-02.svg";
 
 export default function Footer() {
   return (
@@ -11,21 +11,21 @@ export default function Footer() {
             {" "}
             <p className="flex items-center justify-center  text-2xl font-semibold text-[#FFB001]">
               <img
+                width={100}
                 src={Logo}
-                className="rounded-full h-12 mr-3 sm:h-9"
+                className="rounded-full h-14 mr-3 sm:h-9"
                 alt="Landwind Logo"
               />
-              Jegnit
             </p>
             <div className="flex justify-center items-center gap-[1rem]">
               <p>
-                <FaFacebook size={20} />
+                <FaFacebook size={20} color="#003138" />
               </p>
               <p>
-                <FaInstagram size={20} />
+                <FaInstagram size={20} color="#003138" />
               </p>
               <p>
-                <FaTiktok size={20} />
+                <FaTiktok size={20} color="#003138" />
               </p>
             </div>
           </div>
