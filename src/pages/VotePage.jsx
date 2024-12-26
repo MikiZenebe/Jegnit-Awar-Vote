@@ -73,20 +73,22 @@ export default function VotePage() {
   return (
     <div className="max-w-screen-lg mx-auto p-4">
       {/* Category List */}
-      <div className="flex gap-4 justify-center mb-6">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={`px-4 py-2 rounded text-xl ${
-              selectedCategory === category
-                ? "underline text-[#FFB001] font-semibold"
-                : " text-white"
-            }`}
-            onClick={() => setSelectedCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
+      <div className="flex justify-center my-[3rem]">
+        <div className="flex gap-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`px-4 py-2 rounded text-2xl ${
+                selectedCategory === category
+                  ? "underline text-[#FFB001] font-semibold"
+                  : "text-white"
+              }`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Nominee Cards */}
