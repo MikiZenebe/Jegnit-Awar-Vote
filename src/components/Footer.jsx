@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
-import Logo from "../assets/jegnit Logo-02.svg";
+import Logo from "../assets/jegnitLogo-02.svg";
 
 export default function Footer() {
   return (
