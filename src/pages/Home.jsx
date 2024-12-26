@@ -4,17 +4,17 @@ export default function Home() {
   return (
     <div>
       {" "}
-      <div className="relative pt-16  font-[sans-serif] ">
-        <div className="absolute inset-0">
+      <div className="relative mb-16 md:mb-10  font-[sans-serif] ">
+        <div className="absolute ">
           <img
             src="https://framerusercontent.com/images/cOftoM665vb1meUfDnmoINSi2Q.jpg"
             alt="Background Image"
-            className="w-full  object-cover opacity-50"
+            className="w-full h-[80vh] md:h-auto object-cover "
           />
         </div>
 
         <div className="relative max-w-screen-xl mx-auto z-10 text-center text-white flex flex-col justify-center items-center">
-          <div className="my-[10rem]">
+          <div className="md:my-[10rem]">
             <h1 className="text-4xl flex flex-col gap-4 md:text-5xl font-extrabold  mb-6 ">
               ወደ ሽልማት ምርጫ ድህረገጻችን{" "}
               <span className="text-[#FFB001]">እንኳን በሰላም መጡ!</span>
