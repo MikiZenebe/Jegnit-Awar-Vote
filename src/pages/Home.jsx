@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div>
       {" "}
-      <div className="relative mb-16 md:mb-10  font-[sans-serif] ">
-        <div className="absolute ">
+      <div className="relative w-full mb-1 md:mb-[5.3rem]  font-[sans-serif] ">
+        <div className="absolute inset-0">
           <img
             src="https://framerusercontent.com/images/cOftoM665vb1meUfDnmoINSi2Q.jpg"
             alt="Background Image"
@@ -14,12 +14,12 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-screen-xl mx-auto z-10 text-center text-white flex flex-col justify-center items-center">
-          <div className="md:my-[10rem]">
-            <h1 className="text-4xl flex flex-col gap-4 md:text-5xl font-extrabold  mb-6 ">
+          <div className="md:mt-[18rem] mt-[8rem]">
+            <h1 className="text-2xl flex flex-col gap-4 md:text-5xl font-extrabold  mb-6 ">
               ወደ ሽልማት ምርጫ ድህረገጻችን{" "}
               <span className="text-[#FFB001]">እንኳን በሰላም መጡ!</span>
             </h1>
-            <p className="text-lg md:text-xl mb-12 max-w-5xl mx-auto">
+            <p className="text-sm md:text-xl mb-12 max-w-5xl mx-auto">
               ይህ ጀግኒት የሴቶች ማበረታቻ ሽልማት እኛን የሚያበረቱ ሴቶችን ለማክበር የተሰናዳ ልዩ መሰናዶ ነው።
               እነኚህ ሴቶች እንቅፋቶችን በጽናት ያለፉ፣ በማህበረሰባችን ዘንድ ዘላቁ ለውጥን ያደረጉ እንዲሁም ትልቅ
               ህልምን ሰንቀው በመጓዝ በህይወታቸው ውጤት በማምጣታቸው አርአያ መሆን እንደሚቻል ያሳዩን ድንቅ ምሳሌ
